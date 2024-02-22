@@ -17,7 +17,7 @@ public class Test {
         list.add(new Human(40, "CMichael", "CKazachenko", LocalDate.now(), 20));
         List<Human> sorted = list.stream().filter(Human -> Human.weight() > Human.age()).sorted(Comparator.comparing(Human::lastName).reversed()).toList();
         Integer sum = list.stream().mapToInt(Human::weight).sum();
-        System.out.println(Arrays.toString(sorted.toArray()));
+        System.out.println(Arrays.toString(sorted.toArray()).replace("], ", "], \n"));
         System.out.println(sum);
     }
 }
